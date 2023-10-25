@@ -1,0 +1,24 @@
+iniciar_jogo:
+  tags:
+    - Jogo
+  parameters:
+    - in: body
+      name: corpo
+      required: true
+      schema:
+        id: iniciar_jogo
+        required:
+          - nome
+          - modo_jogo
+        properties:
+          nome:
+            type: string
+            description: Nome do jogador.
+          modo_jogo:
+            type: string
+            description: Modo de jogo escolhido.
+  responses:
+    200:
+      description: Jogo iniciado com sucesso
+    409:
+      description: Um jogo já está em andamento

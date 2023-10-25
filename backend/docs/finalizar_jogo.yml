@@ -1,0 +1,8 @@
+finalizar_jogo:
+  tags:
+    - Jogo
+  responses:
+    200:
+      description: Jogo finalizado e resultado obtido com sucesso
+    400:
+      description: Jogo não iniciado

@@ -1,0 +1,8 @@
+obter_questao:
+  tags:
+    - Jogo
+  responses:
+    200:
+      description: Questão obtida com sucesso ou todas as questões foram respondidas
+    400:
+      description: Jogo não iniciado

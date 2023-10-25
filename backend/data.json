@@ -1,0 +1,731 @@
+{
+    "temas" : [
+        "BackEnd",
+        "FrontEnd",
+        "Git",
+        "Desenvolvimento Ágil"
+    ],
+    "questoes" :  
+[
+    {
+        "questão": "Qual é a principal linguagem de programação usada para criar interações dinâmicas em uma página web?",
+        "alternativas": [
+            {
+                "alternativa": "CSS",
+                "correta": false
+            },
+            {
+                "alternativa": "HTML",
+                "correta": false
+            },
+            {
+                "alternativa": "JavaScript",
+                "correta": true
+            },
+            {
+                "alternativa": "Python",
+                "correta": false
+            }
+        ],
+        "dificuldade": 10,
+        "tema": "FrontEnd",
+        "id": 1
+    },
+    {
+        "questão": "Qual é a principal função de um servidor web?",
+        "alternativas": [
+            {
+                "alternativa": "Processar solicitações e entregar respostas a partir de um banco de dados",
+                "correta": true
+            },
+            {
+                "alternativa": "Armazenar imagens e vídeos",
+                "correta": false
+            },
+            {
+                "alternativa": "Renderizar o design de uma página web",
+                "correta": false
+            },
+            {
+                "alternativa": "Fornecer estilos para elementos HTML",
+                "correta": false
+            }
+        ],
+        "dificuldade": 10,
+        "tema": "BackEnd",
+        "id": 2
+    },
+    {
+        "questão": "Qual é a finalidade de um 'branch' em um repositório Git?",
+        "alternativas": [
+            {
+                "alternativa": "Remover arquivos desnecessários",
+                "correta": false
+            },
+            {
+                "alternativa": "Mesclar todas as alterações",
+                "correta": false
+            },
+            {
+                "alternativa": "Automatizar testes de código",
+                "correta": false
+            },
+            {
+                "alternativa": "Isolar o trabalho em progresso do restante do código",
+                "correta": true
+            }
+        ],
+        "dificuldade": 10,
+        "tema": "Git",
+        "id": 3
+    },
+    {
+        "questão": "No desenvolvimento ágil, o que é uma 'daily standup' (reunião diária)?",
+        "alternativas": [
+            {
+                "alternativa": "Uma reunião que acontece uma vez por mês",
+                "correta": false
+            },
+            {
+                "alternativa": "Uma breve reunião diária para que a equipe compartilhe atualizações e desafios",
+                "correta": true
+            },
+            {
+                "alternativa": "Uma reunião longa para discutir todos os detalhes do projeto",
+                "correta": false
+            },
+            {
+                "alternativa": "Uma reunião semanal para apresentar o trabalho concluído aos stakeholders",
+                "correta": false
+            }
+        ],
+        "dificuldade": 10,
+        "tema": "Desenvolvimento Ágil",
+        "id": 4
+    },
+    {
+        "questão": "Qual linguagem é usada para definir a estrutura e o conteúdo de uma página web?",
+        "alternativas": [
+            {
+                "alternativa": "CSS",
+                "correta": false
+            },
+            {
+                "alternativa": "JavaScript",
+                "correta": false
+            },
+            {
+                "alternativa": "HTML",
+                "correta": true
+            },
+            {
+                "alternativa": "PHP",
+                "correta": false
+            }
+        ],
+        "dificuldade": 10,
+        "tema": "FrontEnd",
+        "id": 5
+    },
+    {
+        "questão": "Qual tecnologia é frequentemente utilizada para estilizar elementos HTML em uma página web?",
+        "alternativas": [
+            {
+                "alternativa": "XML",
+                "correta": false
+            },
+            {
+                "alternativa": "SQL",
+                "correta": false
+            },
+            {
+                "alternativa": "JSON",
+                "correta": false
+            },
+            {
+                "alternativa": "CSS",
+                "correta": true
+            }
+        ],
+        "dificuldade": 10,
+        "tema": "FrontEnd",
+        "id": 6
+    },
+    {
+        "questão": "Qual ferramenta ajuda a tornar um site responsivo, adaptando-se a diferentes tamanhos de tela?",
+        "alternativas": [
+            {
+                "alternativa": "CSS Grid",
+                "correta": false
+            },
+            {
+                "alternativa": "Flexbox",
+                "correta": false
+            },
+            {
+                "alternativa": "Bootstrap",
+                "correta": false
+            },
+            {
+                "alternativa": "Media queries",
+                "correta": true
+            }
+        ],
+        "dificuldade": 10,
+        "tema": "FrontEnd",
+        "id": 7
+    },
+    {
+        "questão": "Qual termo se refere a um conjunto de regras que determinam a aparência e o layout dos elementos em uma página web?",
+        "alternativas": [
+            {
+                "alternativa": "Syntax",
+                "correta": false
+            },
+            {
+                "alternativa": "CSS",
+                "correta": true
+            },
+            {
+                "alternativa": "Function",
+                "correta": false
+            },
+            {
+                "alternativa": "Stylesheet",
+                "correta": true
+            }
+        ],
+        "dificuldade": 10,
+        "tema": "FrontEnd",
+        "id": 8
+    },
+    {
+        "questão": "Qual parte de um aplicativo web lida com processamento de dados e interações com o banco de dados?",
+        "alternativas": [
+            {
+                "alternativa": "Frontend",
+                "correta": false
+            },
+            {
+                "alternativa": "Backend",
+                "correta": true
+            },
+            {
+                "alternativa": "Middleend",
+                "correta": false
+            },
+            {
+                "alternativa": "Externo",
+                "correta": false
+            }
+        ],
+        "dificuldade": 10,
+        "tema": "BackEnd",
+        "id": 9
+    },
+    {
+        "questão": "Qual linguagem de programação é frequentemente usada no desenvolvimento backend?",
+        "alternativas": [
+            {
+                "alternativa": "HTML",
+                "correta": false
+            },
+            {
+                "alternativa": "Python",
+                "correta": true
+            },
+            {
+                "alternativa": "CSS",
+                "correta": false
+            },
+            {
+                "alternativa": "JavaScript",
+                "correta": false
+            }
+        ],
+        "dificuldade": 10,
+        "tema": "BackEnd",
+        "id": 10
+    },
+    {
+        "questão": "Qual é o objetivo do método 'map' em JavaScript?",
+        "alternativas": [
+            {
+                "alternativa": "Filtrar elementos de um array",
+                "correta": false
+            },
+            {
+                "alternativa": "Criar um novo array transformando cada elemento do array original",
+                "correta": true
+            },
+            {
+                "alternativa": "Reduzir um array a um único valor",
+                "correta": false
+            },
+            {
+                "alternativa": "Ordenar elementos de um array",
+                "correta": false
+            }
+        ],
+        "dificuldade": 30,
+        "tema": "FrontEnd",
+        "id": 11
+    },
+    {
+        "questão": "Qual protocolo é comumente usado para enviar e-mail em um aplicativo back-end?",
+        "alternativas": [
+            {
+                "alternativa": "HTTP",
+                "correta": false
+            },
+            {
+                "alternativa": "SMTP",
+                "correta": true
+            },
+            {
+                "alternativa": "FTP",
+                "correta": false
+            },
+            {
+                "alternativa": "TCP",
+                "correta": false
+            }
+        ],
+        "dificuldade": 30,
+        "tema": "BackEnd",
+        "id": 12
+    },
+    {
+        "questão": "O que o comando 'git clone' faz?",
+        "alternativas": [
+            {
+                "alternativa": "Cria um novo repositório Git local",
+                "correta": false
+            },
+            {
+                "alternativa": "Clona um repositório remoto para um novo diretório local",
+                "correta": true
+            },
+            {
+                "alternativa": "Faz uma cópia de segurança do repositório atual",
+                "correta": false
+            },
+            {
+                "alternativa": "Merge um branch em outro",
+                "correta": false
+            }
+        ],
+        "dificuldade": 30,
+        "tema": "Git",
+        "id": 13
+    },
+    {
+        "questão": "O que é o Scrum Master responsável por fazer em uma equipe ágil?",
+        "alternativas": [
+            {
+                "alternativa": "Codificar as funcionalidades do produto",
+                "correta": false
+            },
+            {
+                "alternativa": "Remover impedimentos e facilitar o processo Scrum",
+                "correta": true
+            },
+            {
+                "alternativa": "Priorizar o backlog do produto",
+                "correta": false
+            },
+            {
+                "alternativa": "Realizar testes de aceitação",
+                "correta": false
+            }
+        ],
+        "dificuldade": 30,
+        "tema": "Desenvolvimento Ágil",
+        "id": 14
+    },
+    {
+        "questão": "O que é CORS no desenvolvimento Web?",
+        "alternativas": [
+            {
+                "alternativa": "Um framework para o back-end",
+                "correta": false
+            },
+            {
+                "alternativa": "Uma técnica de otimização de imagens",
+                "correta": false
+            },
+            {
+                "alternativa": "Uma política de segurança para compartilhamento de recursos entre domínios",
+                "correta": true
+            },
+            {
+                "alternativa": "Um protocolo para armazenamento de dados",
+                "correta": false
+            }
+        ],
+        "dificuldade": 30,
+        "tema": "FrontEnd",
+        "id": 15
+    },
+    {
+        "questão": "Qual é o propósito de um JWT (JSON Web Token)?",
+        "alternativas": [
+            {
+                "alternativa": "Armazenamento de dados",
+                "correta": false
+            },
+            {
+                "alternativa": "Autenticação e troca de informações",
+                "correta": true
+            },
+            {
+                "alternativa": "Serialização de objetos",
+                "correta": false
+            },
+            {
+                "alternativa": "Criptografia de dados",
+                "correta": false
+            }
+        ],
+        "dificuldade": 30,
+        "tema": "BackEnd",
+        "id": 16
+    },
+    {
+        "questão": "O que 'git stash' faz?",
+        "alternativas": [
+            {
+                "alternativa": "Arquiva mudanças não commitadas",
+                "correta": true
+            },
+            {
+                "alternativa": "Cria um novo branch",
+                "correta": false
+            },
+            {
+                "alternativa": "Exclui um branch",
+                "correta": false
+            },
+            {
+                "alternativa": "Resolve conflitos de merge",
+                "correta": false
+            }
+        ],
+        "dificuldade": 30,
+        "tema": "Git",
+        "id": 17
+    },
+    {
+        "questão": "Qual é o principal objetivo da metodologia Kanban?",
+        "alternativas": [
+            {
+                "alternativa": "Planejamento de sprint",
+                "correta": false
+            },
+            {
+                "alternativa": "Visualização e gerenciamento do fluxo de trabalho",
+                "correta": true
+            },
+            {
+                "alternativa": "Priorização de tarefas",
+                "correta": false
+            },
+            {
+                "alternativa": "Revisão de código",
+                "correta": false
+            }
+        ],
+        "dificuldade": 30,
+        "tema": "Desenvolvimento Ágil",
+        "id": 18
+    },
+    {
+        "questão": "O que a propriedade 'z-index' faz no CSS?",
+        "alternativas": [
+            {
+                "alternativa": "Define o tamanho da fonte",
+                "correta": false
+            },
+            {
+                "alternativa": "Controla o eixo vertical",
+                "correta": false
+            },
+            {
+                "alternativa": "Controla a ordem de empilhamento dos elementos",
+                "correta": true
+            },
+            {
+                "alternativa": "Define a cor de fundo",
+                "correta": false
+            }
+        ],
+        "dificuldade": 30,
+        "tema": "FrontEnd",
+        "id": 19
+    },
+    {
+        "questão": "O que o método 'DELETE' do HTTP faz?",
+        "alternativas": [
+            {
+                "alternativa": "Recupera informações de um recurso",
+                "correta": false
+            },
+            {
+                "alternativa": "Atualiza um recurso existente",
+                "correta": false
+            },
+            {
+                "alternativa": "Exclui um recurso",
+                "correta": true
+            },
+            {
+                "alternativa": "Cria um novo recurso",
+                "correta": false
+            }
+        ],
+        "dificuldade": 30,
+        "tema": "BackEnd",
+        "id": 20
+    },
+    {
+        "questão": "Qual método do DOM é mais eficiente para inserir múltiplos elementos em uma página web?",
+        "alternativas": [
+            {
+                "alternativa": "innerHTML",
+                "correta": false
+            },
+            {
+                "alternativa": "createElement",
+                "correta": false
+            },
+            {
+                "alternativa": "DocumentFragment",
+                "correta": true
+            },
+            {
+                "alternativa": "append",
+                "correta": false
+            }
+        ],
+        "dificuldade": 50,
+        "tema": "FrontEnd",
+        "id": 21
+    },
+    {
+        "questão": "Qual padrão de projeto é comumente usado para criar objetos em JavaScript?",
+        "alternativas": [
+            {
+                "alternativa": "Singleton",
+                "correta": false
+            },
+            {
+                "alternativa": "Factory Method",
+                "correta": true
+            },
+            {
+                "alternativa": "Decorator",
+                "correta": false
+            },
+            {
+                "alternativa": "Observer",
+                "correta": false
+            }
+        ],
+        "dificuldade": 50,
+        "tema": "FrontEnd",
+        "id": 22
+    },
+    {
+        "questão": "O que o método HEAD do HTTP faz?",
+        "alternativas": [
+            {
+                "alternativa": "Recupera apenas os headers",
+                "correta": true
+            },
+            {
+                "alternativa": "Envia dados para o servidor",
+                "correta": false
+            },
+            {
+                "alternativa": "Recupera todo o corpo da resposta",
+                "correta": false
+            },
+            {
+                "alternativa": "Apaga um recurso",
+                "correta": false
+            }
+        ],
+        "dificuldade": 50,
+        "tema": "BackEnd",
+        "id": 23
+    },
+    {
+        "questão": "No contexto de um servidor Node.js, o que é 'Event Loop'?",
+        "alternativas": [
+            {
+                "alternativa": "Uma biblioteca para eventos",
+                "correta": false
+            },
+            {
+                "alternativa": "Uma fila de eventos a serem processados",
+                "correta": true
+            },
+            {
+                "alternativa": "Um método para criar eventos",
+                "correta": false
+            },
+            {
+                "alternativa": "Um tipo de requisição HTTP",
+                "correta": false
+            }
+        ],
+        "dificuldade": 50,
+        "tema": "BackEnd",
+        "id": 24
+    },
+    {
+        "questão": "O que o comando 'git bisect' faz?",
+        "alternativas": [
+            {
+                "alternativa": "Compara dois branches",
+                "correta": false
+            },
+            {
+                "alternativa": "Divide um branch em duas partes",
+                "correta": false
+            },
+            {
+                "alternativa": "Ajuda a encontrar o commit que introduziu um bug",
+                "correta": true
+            },
+            {
+                "alternativa": "Mescla dois commits",
+                "correta": false
+            }
+        ],
+        "dificuldade": 50,
+        "tema": "Git",
+        "id": 25
+    },
+    {
+        "questão": "No Git, como você pode configurar um 'hook' de pré-commit?",
+        "alternativas": [
+            {
+                "alternativa": "Usando o comando 'git hook pre-commit'",
+                "correta": false
+            },
+            {
+                "alternativa": "Editando o arquivo .git/hooks/pre-commit",
+                "correta": true
+            },
+            {
+                "alternativa": "Usando o comando 'git config'",
+                "correta": false
+            },
+            {
+                "alternativa": "Não é possível configurar um hook de pré-commit",
+                "correta": false
+            }
+        ],
+        "dificuldade": 50,
+        "tema": "Git",
+        "id": 26
+    },
+    {
+        "questão": "O que o acrônimo INVEST representa no desenvolvimento ágil?",
+        "alternativas": [
+            {
+                "alternativa": "Independente, Negociável, Valioso, Estimável, Segmentado, Testável",
+                "correta": true
+            },
+            {
+                "alternativa": "Integrado, Necessário, Valido, Escalável, Simples, Testável",
+                "correta": false
+            },
+            {
+                "alternativa": "Independente, Negociável, Viável, Estimável, Simples, Testável",
+                "correta": false
+            },
+            {
+                "alternativa": "Integrado, Necessário, Valioso, Escalável, Segmentado, Testável",
+                "correta": false
+            }
+        ],
+        "dificuldade": 50,
+        "tema": "Desenvolvimento Ágil",
+        "id": 27
+    },
+    {
+        "questão": "Qual é o objetivo principal do princípio 'YAGNI' no desenvolvimento ágil?",
+        "alternativas": [
+            {
+                "alternativa": "Promover o desenvolvimento guiado por testes",
+                "correta": false
+            },
+            {
+                "alternativa": "Evitar a adição de funcionalidades que não são necessárias no momento",
+                "correta": true
+            },
+            {
+                "alternativa": "Encorajar a comunicação frequente entre os membros da equipe",
+                "correta": false
+            },
+            {
+                "alternativa": "Implementar integração contínua desde o início do projeto",
+                "correta": false
+            }
+        ],
+        "dificuldade": 50,
+        "tema": "Desenvolvimento Ágil",
+        "id": 28
+    },
+    {
+        "questão": "No contexto do desenvolvimento front-end, o que é 'Tree Shaking'?",
+        "alternativas": [
+            {
+                "alternativa": "Uma técnica para tornar o DOM mais eficiente",
+                "correta": false
+            },
+            {
+                "alternativa": "Um algoritmo para balancear árvores binárias",
+                "correta": false
+            },
+            {
+                "alternativa": "Uma técnica para eliminar código morto e não utilizado",
+                "correta": true
+            },
+            {
+                "alternativa": "Um método para depurar aplicações React",
+                "correta": false
+            }
+        ],
+        "dificuldade": 50,
+        "tema": "FrontEnd",
+        "id": 29
+    },
+    {
+        "questão": "O que a diretiva 'using' faz em C#?",
+        "alternativas": [
+            {
+                "alternativa": "Inclui uma biblioteca de classes",
+                "correta": true
+            },
+            {
+                "alternativa": "Declara variáveis",
+                "correta": false
+            },
+            {
+                "alternativa": "Inicia um novo namespace",
+                "correta": false
+            },
+            {
+                "alternativa": "Implementa interfaces",
+                "correta": false
+            }
+        ],
+        "dificuldade": 50,
+        "tema": "BackEnd",
+        "id": 30
+    }
+]
+}

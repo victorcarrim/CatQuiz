@@ -1,0 +1,20 @@
+verificar_resposta:
+  tags:
+    - Jogo
+  parameters:
+    - in: body
+      name: corpo
+      required: true
+      schema:
+        id: verificar_resposta
+        required:
+          - resposta
+        properties:
+          resposta:
+            type: string
+            description: Texto completo da alternativa escolhida pelo jogador.
+  responses:
+    200:
+      description: Resposta verificada com sucesso
+    400:
+      description: Jogo não iniciado, questão não foi buscada ou questão já foi respondida anteriormente
