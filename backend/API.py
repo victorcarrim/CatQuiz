@@ -23,7 +23,8 @@ def iniciar_jogo():
     context = Context()
     nome = request.json.get("nome")
     modo_jogo_str = request.json.get("modo_jogo")
-    arquivo = LoadDataFactory.getJson("data.json")
+    # data
+    arquivo = LoadDataFactory.getJson("data.json") # singleton
 
     if not jogo_atual:
         jogo_atual = Game(nome, modo_jogo_str)
