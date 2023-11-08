@@ -1,7 +1,5 @@
-from flask import Flask, Response, jsonify, request
+from flask import Flask, jsonify, request
 from flask_cors import CORS
-from typing import List, Dict
-import jsonpickle
 from padroes.LoadDataSingleton import LoadDataSingleton
 from padroes.QuestaoFactory import QuestaoFactory
 from padroes.ModoJogoStrategy import TemaDificuldade, TemaEAleatorio, DificuldadeEAleatorio, Aleatorio, Context
