@@ -1,5 +1,4 @@
 from flask import Flask, Response, jsonify, request
-from flasgger import Swagger, swag_from
 from flask_cors import CORS
 from typing import List, Dict
 import jsonpickle
@@ -9,7 +8,6 @@ from padroes.ModoJogoStrategy import TemaDificuldade, TemaEAleatorio, Dificuldad
 from padroes.GameSingleton import Game
 
 app = Flask(__name__)
-swagger = Swagger(app)
 
 CORS(app, origins=["http://localhost:5173"])
 
@@ -17,7 +15,6 @@ jogo_atual = None
 questao_atual = None
 
 @app.route('/iniciar', methods=['POST'])
-@swag_from('docs/iniciar_jogo.yml')
 def iniciar_jogo():
     global jogo_atual
     context = Context()
@@ -53,7 +50,6 @@ def iniciar_jogo():
         return jsonify({"status": "Um jogo já está em andamento"}), 409
 
 @app.route('/obter_questao', methods=['GET'])
-@swag_from('docs/obter_questao.yml')
 def obter_questao():
     global jogo_atual, questao_atual
 
@@ -77,7 +73,6 @@ def obter_questao():
 
 
 @app.route('/verificar_resposta', methods=['POST'])
-@swag_from('docs/verificar_resposta.yml')
 def verificar_resposta():
     global jogo_atual, questao_atual
 
@@ -102,7 +97,6 @@ def verificar_resposta():
 
 
 @app.route('/finalizar', methods=['GET'])
-@swag_from('docs/finalizar_jogo.yml') 
 def finalizar_jogo():
     global jogo_atual, questao_atual
 
