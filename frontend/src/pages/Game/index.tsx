@@ -30,8 +30,10 @@ interface GameProps {
 export function Game({ onGameEnd }: GameProps){
 
     const [question, setQuestion] = useState<Questao>();
+    const [progress, setProgress] = useState();
     const [responseQuestion, setResponseQuestion] = useState();
     const [selectedAlternative, setSelectedAlternative] = useState<number | null>(null);
+    const [correctAlternativeIndex, setCorrectAlternativeIndex] = useState<number | null>(null);
 
     function getQuestion(){
         axios.get("http://127.0.0.1:5000/obter_questao")
@@ -45,7 +47,10 @@ export function Game({ onGameEnd }: GameProps){
                 return;
             }
             if(response.status === 200){
-                setQuestion(response.data);
+                setQuestion(response.data.questao);
+                setProgress(response.data.pergunta_atual)
+                const correctIndex = response.data.questao.alternativas.findIndex((alt: Alternativa) => alt.correta);
+                setCorrectAlternativeIndex(correctIndex);
             }
         })
         .catch(error => {
@@ -94,10 +99,10 @@ export function Game({ onGameEnd }: GameProps){
 
     return(
         <Container>
-            <CardQuestion question={question?.questão} theme={question?.tema} />
+            <CardQuestion question={question?.questão} theme={question?.tema} progress={progress} />
             <ContainerButton>
             {question?.alternativas.map((alternativa, index) => (
-                <Button key={index} text={alternativa.alternativa} onClick={() => handleQuestion(alternativa, index)} status={index === selectedAlternative ? responseQuestion : undefined} />
+                <Button key={index} text={alternativa.alternativa} onClick={() => handleQuestion(alternativa, index)} status={index === selectedAlternative ? responseQuestion : undefined} isCorrect={responseQuestion === 'errado' && index === correctAlternativeIndex} shouldBlink={responseQuestion === 'errado' && index === correctAlternativeIndex} />
             ))}
             </ContainerButton>
         </Container>

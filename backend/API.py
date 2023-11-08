@@ -3,7 +3,7 @@ from flasgger import Swagger, swag_from
 from flask_cors import CORS
 from typing import List, Dict
 import jsonpickle
-from padroes.LoadDataFactory import LoadDataFactory
+from padroes.LoadDataSingleton import LoadDataSingleton
 from padroes.QuestaoFactory import QuestaoFactory
 from padroes.ModoJogoStrategy import TemaDificuldade, TemaEAleatorio, DificuldadeEAleatorio, Aleatorio, Context
 from padroes.GameSingleton import Game
@@ -11,7 +11,7 @@ from padroes.GameSingleton import Game
 app = Flask(__name__)
 swagger = Swagger(app)
 
-CORS(app)
+CORS(app, origins=["http://localhost:5173"])
 
 jogo_atual = None
 questao_atual = None
@@ -21,10 +21,11 @@ questao_atual = None
 def iniciar_jogo():
     global jogo_atual
     context = Context()
+    dataSingleton = LoadDataSingleton()
+    data = dataSingleton.get_json("data.json")
     nome = request.json.get("nome")
     modo_jogo_str = request.json.get("modo_jogo")
-    # data
-    arquivo = LoadDataFactory.getJson("data.json") # singleton
+    # data = LoadDataFactory.getJson("data.json") # singleton
 
     if not jogo_atual:
         jogo_atual = Game(nome, modo_jogo_str)
@@ -43,7 +44,7 @@ def iniciar_jogo():
         else:
             strategy = Aleatorio()
 
-        questoes = context.gerar_questoes(strategy, arquivo)
+        questoes = context.gerar_questoes(strategy, data)
         jogo_atual.set_questoes(questoes)
 
         response = {"status": "Jogo iniciado", "nome": nome, "modo_jogo": modo_jogo_str}
@@ -59,12 +60,21 @@ def obter_questao():
     if not jogo_atual:
         return jsonify({"status": "Jogo não iniciado"}), 400
 
+    total_perguntas = len(jogo_atual.questoes)
+    perguntas_respondidas = len(jogo_atual.questoes_respondidas)
+    pergunta_numero = perguntas_respondidas + 1
+
     for data in jogo_atual.questoes:
         if data["id"] not in jogo_atual.questoes_respondidas:
             questao_atual = QuestaoFactory.criar_questao(data)
-            return jsonify(data)
+            resposta = {
+                "pergunta_atual": f"{pergunta_numero}/{total_perguntas}",
+                "questao": data
+            }
+            return jsonify(resposta)
 
     return jsonify({"status": "Todas as questões foram respondidas"}), 204
+
 
 @app.route('/verificar_resposta', methods=['POST'])
 @swag_from('docs/verificar_resposta.yml')
@@ -82,6 +92,7 @@ def verificar_resposta():
     alternativa_correta = next((alt for alt in questao_atual.alternativas if alt.correta), None)
 
     if alternativa_correta and alternativa_correta.alternativa == resposta:
+        jogo_atual.questoes_corretas += 1
         jogo_atual.set_pontuacao(jogo_atual.pontuacao + questao_atual.dificuldade)
         jogo_atual.adicionar_questao_respondida(questao_atual.id)
         return jsonify({"resultado": "Certa Resposta", "pontuacao": jogo_atual.pontuacao})
@@ -100,8 +111,10 @@ def finalizar_jogo():
 
     resultado = {
         "nome": jogo_atual.nome,
-        "pontuacao": jogo_atual.pontuacao
-    }
+        "pontuacao": str(jogo_atual.pontuacao),
+        "questoes_corretas": str(jogo_atual.questoes_corretas) + "/" + str(len(jogo_atual.questoes_respondidas))
+    }       
+
 
     jogo_atual.finalizar_jogo()
     jogo_atual = None

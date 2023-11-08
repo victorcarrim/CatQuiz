@@ -6,12 +6,6 @@ import { Game } from './pages/Game';
 import { EndGame } from './pages/EndGame';
 import Swal from 'sweetalert2';
 
-/*
-- adicionar progress (1/10)
-- voce acerto x de questoes
-- feedback questoes que errou
-*/
-
 interface JsonGameType {
   nome: string;
   modo_jogo: string;

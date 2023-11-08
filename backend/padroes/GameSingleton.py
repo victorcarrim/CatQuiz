@@ -14,6 +14,7 @@ class Game(metaclass=Singleton):
         self.pontuacao = 0
         self.questoes = []
         self.questoes_respondidas = []
+        self.questoes_corretas = 0
 
     def set_questoes(self, questoes):
         self.questoes = questoes
@@ -24,7 +25,7 @@ class Game(metaclass=Singleton):
     def adicionar_questao_respondida(self, questao_id: int):
         if questao_id not in self.questoes_respondidas:
             self.questoes_respondidas.append(questao_id)
-
+            
     def questao_foi_respondida(self, questao_id: int) -> bool:
         return questao_id in self.questoes_respondidas
     
@@ -34,3 +35,4 @@ class Game(metaclass=Singleton):
         self.pontuacao = 0
         self.questoes = []
         self.questoes_respondidas = []
+        self.questoes_corretas = 0

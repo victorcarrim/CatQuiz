@@ -36,19 +36,19 @@ export function InitialGame(props : Props){
         <Container>
             <ContainerTwo>
                 {!gameNon &&
-                    <CardQuestion question="CatQuiz" subtitle="Para começar a jogar clique em iniciar"  />
+                    <CardQuestion question="PyQuiz" subtitle="Para começar a jogar clique em iniciar"  />
                 }
                 {name &&
-                    <CardQuestion question="CatQuiz" subtitle="Digite seu nome"  />
+                    <CardQuestion question="PyQuiz" subtitle="Digite seu nome"  />
                 }
                 {theme &&
-                    <CardQuestion question="CatQuiz" subtitle="Escolha o tema do jogo"  />
+                    <CardQuestion question="PyQuiz" subtitle="Escolha o tema do jogo"  />
                 }
                 {mode &&
-                    <CardQuestion question="CatQuiz" subtitle="Escolha o modo do jogo"  />
+                    <CardQuestion question="PyQuiz" subtitle="Escolha o modo do jogo"  />
                 }
                 {startGame &&
-                    <CardQuestion question="CatQuiz" subtitle="Pronto para aventura?"  />
+                    <CardQuestion question="PyQuiz" subtitle="Pronto para aventura?"  />
                 }
             </ContainerTwo>
             {!gameNon &&

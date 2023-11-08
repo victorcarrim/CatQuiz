@@ -27,6 +27,18 @@ export const Subtitle = styled.p`
     font-weight: 500;
 `
 
+export const Progress = styled.p`
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 10px;
+    margin-left: 30px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+`;
+
 export const Theme = styled.p`
     color: white;
     position: absolute;

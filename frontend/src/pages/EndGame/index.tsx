@@ -12,7 +12,8 @@ export function EndGame({ onButtonClick }: EndGameProps){
 
     const [jsonGame, setJsonGame] = useState({
         nome : "",
-        pontuacao: ""
+        pontuacao: 0,
+        questoes_corretas: 0
     });
 
     function endGame(){
@@ -37,7 +38,7 @@ export function EndGame({ onButtonClick }: EndGameProps){
     return(
         <Container>
             <ContainerTwo>
-                <CardQuestion question="CatQuiz" subtitle="Fim de jogo" points={jsonGame.pontuacao}  />
+                <CardQuestion question="PyQuiz" subtitle="Fim de jogo" points={jsonGame.pontuacao} acert={jsonGame.questoes_corretas}  />
             </ContainerTwo>
             <ContainerTwo>
                 <Button text="Iniciar um novo jogo" onClick={onButtonClick} />

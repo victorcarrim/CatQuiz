@@ -1,8 +1,16 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 interface ButtonContainerProps {
   status?: 'certo' | 'errado';
+  isCorrect?: boolean;
+  shouldBlink?: boolean;
 }
+
+const blink = keyframes`
+  50% {
+    box-shadow: 0 0 0 5px #00FF00;
+  }
+`;
 
 export const ButtonContainer = styled.button<ButtonContainerProps>`
   width: 320px;
@@ -23,6 +31,7 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-size: 20px;
+  box-shadow: ${props => props.isCorrect ? '0 0 8px 4px #00FF00' : 'none'};
 
   &:hover {
     background-color: ${props => {
