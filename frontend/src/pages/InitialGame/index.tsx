@@ -17,13 +17,15 @@ export function InitialGame(props : Props){
 
     const [jsonGame, setJsonGame] = useState({
         nome : "",
-        modo_jogo: "/"
+        modo_jogo: "/",
+        questoes: 10
     });
 
     const [gameNon, setGameNon] = useState(false);
     const [name, setName] = useState(false);
     const [theme, setTheme] = useState(false);
     const [mode, setMode] = useState(false);
+    const [question, setQuestion] = useState(false)
     const [startGame, setStartGame] = useState(false)
 
     function updateJsonGame(){
@@ -46,6 +48,9 @@ export function InitialGame(props : Props){
                 }
                 {mode &&
                     <CardQuestion question="PyQuiz" subtitle="Escolha o modo do jogo"  />
+                }
+                {question &&
+                    <CardQuestion question="PyQuiz" subtitle="Escolha o numero de questões"  />
                 }
                 {startGame &&
                     <CardQuestion question="PyQuiz" subtitle="Pronto para aventura?"  />
@@ -98,19 +103,35 @@ export function InitialGame(props : Props){
                 <ContainerTheme>
                     <Row>
                         <ContainerTwo>
-                            <Button text="Fácil" onClick={() => { const leftPart = jsonGame.modo_jogo.split('/')[0]; setJsonGame(prevState => ({ ...prevState, modo_jogo: leftPart + "/10" })); setStartGame(true); setMode(false)}} />
+                            <Button text="Fácil" onClick={() => { const leftPart = jsonGame.modo_jogo.split('/')[0]; setJsonGame(prevState => ({ ...prevState, modo_jogo: leftPart + "/10" })); setQuestion(true); setMode(false)}} />
                         </ContainerTwo>
                         <ContainerTwo>
-                            <Button text="Médio" onClick={() => { const leftPart = jsonGame.modo_jogo.split('/')[0]; setJsonGame(prevState => ({ ...prevState, modo_jogo: leftPart + "/30" }));setStartGame(true); setMode(false)}} />
+                            <Button text="Médio" onClick={() => { const leftPart = jsonGame.modo_jogo.split('/')[0]; setJsonGame(prevState => ({ ...prevState, modo_jogo: leftPart + "/30" }));setQuestion(true); setMode(false)}} />
                         </ContainerTwo>
                     </Row>
                     
                     <Row>
                         <ContainerTwo>
-                            <Button text="Dificil" onClick={() => { const leftPart = jsonGame.modo_jogo.split('/')[0]; setJsonGame(prevState => ({ ...prevState, modo_jogo: leftPart + "/50" }));setStartGame(true); setMode(false)}} />
+                            <Button text="Dificil" onClick={() => { const leftPart = jsonGame.modo_jogo.split('/')[0]; setJsonGame(prevState => ({ ...prevState, modo_jogo: leftPart + "/50" }));setQuestion(true); setMode(false)}} />
                         </ContainerTwo>
                         <ContainerTwo>
-                            <Button text="Aleatório" onClick={() => {setStartGame(true); setMode(false)}} />
+                            <Button text="Aleatório" onClick={() => {setQuestion(true); setMode(false)}} />
+                        </ContainerTwo>
+                    </Row>
+                </ContainerTheme>
+            }
+            {
+                question &&
+                <ContainerTheme>
+                    <Row>
+                        <ContainerTwo>
+                            <Button text="3" onClick={() => { setJsonGame(prevState => ({ ...prevState, questoes: 3 })); setQuestion(false); setStartGame(true); }} />
+                        </ContainerTwo>
+                        <ContainerTwo>
+                            <Button text="5" onClick={() => { setJsonGame(prevState => ({ ...prevState, questoes: 5 })); setQuestion(false); setStartGame(true); }} />
+                        </ContainerTwo>
+                        <ContainerTwo>
+                            <Button text="10" onClick={() => { setJsonGame(prevState => ({ ...prevState, questoes: 10 })); setQuestion(false); setStartGame(true); }} />
                         </ContainerTwo>
                     </Row>
                 </ContainerTheme>

@@ -7,9 +7,32 @@ type Props = {
     acert?: any
     theme?: string,
     progress?: string
+    modeAndDificult?: string
+    name?: any,
+    nameBoolean?: Boolean
 }
 
-export function CardQuestion({ question, theme, subtitle, points, progress, acert } : Props){
+function mapDifficulty(difficulty: string) {
+    switch(difficulty) {
+        case "10": return "Fácil";
+        case "30": return "Médio";
+        case "50": return "Difícil";
+        default: return "Aleatório";
+    }
+}
+
+function extractModeAndDifficulty(modeAndDificult: string) {
+    let [mode, difficulty] = modeAndDificult.split('/');
+    mode = mode || "Aleatório";
+    difficulty = mapDifficulty(difficulty); 
+
+    return { mode, difficulty };
+}
+
+export function CardQuestion({ question, theme, subtitle, points, progress, acert, modeAndDificult, name, nameBoolean } : Props){
+    const { mode, difficulty } = modeAndDificult ? extractModeAndDifficulty(modeAndDificult) : { mode: "", difficulty: "" };
+
+
     return(
         <Container>
             {
@@ -28,15 +51,27 @@ export function CardQuestion({ question, theme, subtitle, points, progress, acer
                 </Subtitle>
             }
             {
+                nameBoolean &&
+                <Subtitle>
+                    Jogador: {name || "Não identificado"}
+                </Subtitle>
+            }
+            {
                 points &&
                 <Subtitle>
                     Pontuação: {points}
                 </Subtitle>
             }
             {
-                acert &&
+                modeAndDificult &&
                 <Subtitle>
-                    Questões Acertadas: {acert}
+                    Tema: {mode}
+                </Subtitle>
+            }
+            {
+                modeAndDificult &&
+                <Subtitle>
+                    Dificuldade: {difficulty}
                 </Subtitle>
             }
             {theme && 

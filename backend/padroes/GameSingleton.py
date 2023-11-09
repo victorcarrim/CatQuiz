@@ -30,7 +30,7 @@ class Game(metaclass=Singleton):
         return questao_id in self.questoes_respondidas
     
     def finalizar_jogo(self):
-        self.nome = None
+        self.nome = ""
         self.modo_jogo = None
         self.pontuacao = 0
         self.questoes = []

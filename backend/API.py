@@ -12,6 +12,8 @@ CORS(app, origins=["http://localhost:5173"])
 jogo_atual = None
 questao_atual = None
 
+## colocar quantidade de questoes
+
 @app.route('/iniciar', methods=['POST'])
 def iniciar_jogo():
     global jogo_atual
@@ -20,10 +22,14 @@ def iniciar_jogo():
     data = dataSingleton.get_json("data.json")
     nome = request.json.get("nome")
     modo_jogo_str = request.json.get("modo_jogo")
+    questoes = request.json.get("questoes")
     # data = LoadDataFactory.getJson("data.json") # singleton
 
     if not jogo_atual:
         jogo_atual = Game(nome, modo_jogo_str)
+        jogo_atual.nome = nome
+        jogo_atual.modo_jogo = modo_jogo_str
+
         
         if "/" in modo_jogo_str:
             tema, valor_dificuldade = modo_jogo_str.split("/")
@@ -39,8 +45,8 @@ def iniciar_jogo():
         else:
             strategy = Aleatorio()
 
-        questoes = context.gerar_questoes(strategy, data)
-        jogo_atual.set_questoes(questoes)
+        questoes_geradas = context.gerar_questoes(strategy, data, questoes)
+        jogo_atual.set_questoes(questoes_geradas)
 
         response = {"status": "Jogo iniciado", "nome": nome, "modo_jogo": modo_jogo_str}
         return jsonify(response)
@@ -104,7 +110,9 @@ def finalizar_jogo():
     resultado = {
         "nome": jogo_atual.nome,
         "pontuacao": str(jogo_atual.pontuacao),
-        "questoes_corretas": str(jogo_atual.questoes_corretas) + "/" + str(len(jogo_atual.questoes_respondidas))
+        "questoes_corretas": str(jogo_atual.questoes_corretas) + "/" + str(len(jogo_atual.questoes_respondidas)),
+        "nome": jogo_atual.nome,
+        "tema-dificuldade": jogo_atual.modo_jogo
     }       
 
 

@@ -88,7 +88,7 @@ export function Game({ onGameEnd }: GameProps){
 
         setTimeout(() => {
             sendResponseQuestion(alternativa.alternativa);
-        }, 3000);
+        }, 2000);
     }
     
 
